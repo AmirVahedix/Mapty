@@ -10,3 +10,19 @@ const inputDistance = document.querySelector('.form__input--distance');
 const inputDuration = document.querySelector('.form__input--duration');
 const inputCadence = document.querySelector('.form__input--cadence');
 const inputElevation = document.querySelector('.form__input--elevation');
+
+if (navigator.geolocation) {
+
+    // My device geolocation is not working att all :(
+    /*navigator.geolocation.getCurrentPosition(function (position) {
+        // const { latitude } = position.coords;
+        // const { longitude } = position.coords;
+    }, function () {
+        alert('Could not get your position');
+    });*/
+
+    // Set lat and lang manually because my device is sucked !
+    const latitude = 35.7018071;
+    const longitude = 51.3984517;
+    console.log(`https://www.google.com/maps/@${latitude},${longitude}`);
+}
