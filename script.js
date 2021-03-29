@@ -25,4 +25,18 @@ if (navigator.geolocation) {
     const latitude = 35.7018071;
     const longitude = 51.3984517;
     console.log(`https://www.google.com/maps/@${latitude},${longitude}`);
+
+    const coords = [latitude, longitude];
+
+    const map = L.map('map').setView(coords, 13);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    L.marker(coords)
+        .addTo(map)
+        .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+        .openPopup();
+
 }
