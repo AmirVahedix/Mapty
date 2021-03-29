@@ -24,7 +24,6 @@ if (navigator.geolocation) {
     // Set lat and lang manually because my device is sucked !
     const latitude = 35.7018071;
     const longitude = 51.3984517;
-    console.log(`https://www.google.com/maps/@${latitude},${longitude}`);
 
     // Store current coords in a variable
     const coords = [latitude, longitude];
@@ -40,5 +39,24 @@ if (navigator.geolocation) {
         .addTo(map)
         .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
         .openPopup();
+
+    map.on('click', function (mapEvent) {
+        console.log(mapEvent);
+        const { lat, lng } = mapEvent.latlng;
+
+        L.marker([lat, lng])
+            .addTo(map)
+            .bindPopup(
+                L.popup({
+                    maxWidth: 250,
+                    maxHeight: 100,
+                    autoClose: false,
+                    closeOnClick: false,
+                    className: 'running-popup',
+                })
+            )
+            .setPopupContent('Workout!')
+            .openPopup();
+    });
 
 }
