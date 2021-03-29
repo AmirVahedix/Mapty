@@ -26,8 +26,10 @@ if (navigator.geolocation) {
     const longitude = 51.3984517;
     console.log(`https://www.google.com/maps/@${latitude},${longitude}`);
 
+    // Store current coords in a variable
     const coords = [latitude, longitude];
 
+    // Display map on page
     const map = L.map('map').setView(coords, 13);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
