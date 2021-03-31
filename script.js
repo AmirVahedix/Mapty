@@ -161,12 +161,8 @@ class App {
         this._renderWorkout(workout);
 
         // Hide form + clear input fields
-        inputDistance.value = inputCadence.value = inputDuration.value = inputElevation.value = '';
-        form.style.display = 'none';
-        form.classList.add('hidden');
-        setTimeout(() => {
-            form.style.display = 'grid'
-        }, 1000);
+        this._hideForm();
+
     }
 
     _renderWorkoutMarker(workout) {
@@ -252,6 +248,15 @@ class App {
         })
 
         workout.click();
+    }
+
+    _hideForm() {
+        inputDistance.value = inputCadence.value = inputDuration.value = inputElevation.value = '';
+        form.style.display = 'none';
+        form.classList.add('hidden');
+        setTimeout(() => {
+            form.style.display = 'grid'
+        }, 1000);
     }
 }
 
