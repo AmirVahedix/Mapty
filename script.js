@@ -297,3 +297,13 @@ class App {
 }
 
 const app = new App();
+
+
+
+// TODO: Edit workouts
+// TODO: Delete a workout
+// TODO: Delete all workouts
+// TODO: Sort workouts
+// TODO: Rebuild Cycling and Running objects after fetching data from local storage
+// TODO: Use better error messages
+// TODO: Button to show all workouts on map
